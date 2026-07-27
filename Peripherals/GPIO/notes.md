@@ -14,7 +14,7 @@ Memory-mapped GPIO controller with a 2-pin bidirectional interface. Bus-connecte
 
 ```verilog
 module gpio (
-    clk, reset, ---> clock is used for synchronous write and asynchronous read
+    clk, reset, --> clock is used for synchronous write and asynchronous read
     data_in, address_in,
     data_out, write_enable_in,
     pins
