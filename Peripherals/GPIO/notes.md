@@ -2,6 +2,14 @@
 
 Memory-mapped GPIO controller with a 2-pin bidirectional interface. Bus-connected register-file style peripheral (address + data + write enable), combinational read and sequential write/sample logic.
 
+## HandWritten Notes 
+
+<img width="2735" height="1692" alt="1000041810" src="https://github.com/user-attachments/assets/5822a83a-342b-40e0-8706-072579531f9a" />
+
+<img width="2589" height="1560" alt="1000041811" src="https://github.com/user-attachments/assets/49eb5733-cd2d-4a02-a5aa-c6846ab267ee" />
+
+<img width="2750" height="1560" alt="1000041816" src="https://github.com/user-attachments/assets/bb55a313-af44-4a08-a82c-7b1997abf15b" />
+
 ## Module Interface
 
 ```verilog
@@ -97,3 +105,6 @@ read(0x4);                // data_out returns captured value
 - Only 2 pins are hardcoded — not parameterized for wider GPIO ports.
 - Input sampling happens on **every clock edge** whenever `write_enable_in == 0`, regardless of address_in — it's not gated by a specific "read" address.
 - `data` is dual-purpose: holds the output value driven onto the pin, but also gets overwritten by sampled input values when configured as input. Don't expect the last-written output value to persist if the pin is later switched to input mode.
+
+
+
